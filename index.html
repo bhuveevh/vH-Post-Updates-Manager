@@ -12,6 +12,11 @@
     <div class="vh-header-row">
       <div class="vh-tool-title">vH-Post Updates Manager</div>
       <div class="vh-header-actions">
+        <button id="filterBtn" class="vh-filter-btn" title="Filter Posts">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 5h16M6 10h10M9 15h4"/>
+          </svg>
+        </button>
         <label class="vh-file-label">
           <input type="file" id="fileInput" accept=".json,.txt">
           <span>Select File</span>
@@ -22,6 +27,34 @@
         </button>
       </div>
     </div>
+
+    <!-- FILTER POPUP -->
+    <div id="vh-filter-popup" class="vh-filter-popup">
+      <div class="vh-filter-popup-inner">
+        <div class="vh-filter-popup-title">Filter Posts</div>
+        <form id="vh-filter-form">
+          <div class="vh-filter-field">
+            <label for="filterTitle">Title contains:</label>
+            <input type="text" id="filterTitle" name="filterTitle" placeholder="Post Title">
+          </div>
+          <div class="vh-filter-field">
+            <label for="filterDate">Date (yyyy-mm-dd):</label>
+            <input type="date" id="filterDate" name="filterDate">
+          </div>
+          <div class="vh-filter-field">
+            <label>
+              <input type="checkbox" id="filterOutdated" name="filterOutdated">
+              Outdated Posts (blinked for 3 days)
+            </label>
+          </div>
+          <div class="vh-filter-popup-actions">
+            <button type="submit" class="vh-filter-ok">Ok</button>
+            <button type="button" id="vh-filter-cancel" class="vh-filter-cancel">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div id="vh-filter-overlay" class="vh-filter-popup-overlay"></div>
 
     <!-- FORM ROW -->
     <form id="addForm" class="vh-form-row">
@@ -34,8 +67,8 @@
       <input type="hidden" name="rowIndex" id="rowIndex">
     </form>
 
-    <!-- DATA CARDS ROW -->
-    <div id="cardsContainer" class="vh-cards-container"></div>
+    <!-- DATA STRIP ROW -->
+    <div id="vh-strip-container" class="vh-strip-container"></div>
 
     <p class="vh-note">
       Data is file-based: upload, update, download – everything happens here.<br>
