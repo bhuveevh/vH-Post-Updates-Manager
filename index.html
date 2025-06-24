@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>vH-Post Updates Manager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="vh-style.css">
+</head>
+<body>
+  <div class="vh-main-container">
+    <!-- HEADER -->
+    <div class="vh-header-row">
+      <div class="vh-tool-title">vH-Post Updates Manager</div>
+      <div class="vh-header-actions">
+        <label class="vh-file-label">
+          <input type="file" id="fileInput" accept=".json,.txt">
+          <span>Select File</span>
+        </label>
+        <button id="downloadBtn" disabled>Download Updated File</button>
+        <button id="toggleTheme" aria-label="Toggle dark/light mode">
+          <span id="themeIcon">🌙</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- FORM ROW -->
+    <form id="addForm" class="vh-form-row">
+      <input name="title" placeholder="Post Title" required>
+      <input name="url" placeholder="Post Edit Url" required>
+      <input name="updateText" placeholder="What Update" required>
+      <input name="sourceUrl" placeholder="Update Source Url" required>
+      <input name="updateDate" type="date" required>
+      <button type="submit">Add/Update</button>
+      <input type="hidden" name="rowIndex" id="rowIndex">
+    </form>
+
+    <!-- DATA CARDS ROW -->
+    <div id="cardsContainer" class="vh-cards-container"></div>
+
+    <p class="vh-note">
+      Data is file-based: upload, update, download – everything happens here.<br>
+      <b>Tip:</b> After uploading a file, you can view, modify, and download updated data as a new file.
+    </p>
+    <div class="vh-branding">
+      Developed by <a href="https://vacancyhai.online" target="_blank">VACANCYHAI.ONLINE</a> | Inspired by USERS
+    </div>
+  </div>
+  <script src="vh-script.js"></script>
+</body>
+</html>
